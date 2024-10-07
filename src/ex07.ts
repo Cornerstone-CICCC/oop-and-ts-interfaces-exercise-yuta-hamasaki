@@ -3,10 +3,13 @@
 // Write a function using overloads that handles both types and logs a different message for each.
 
 interface Logger {
-
+  (input:string):void,
+  (input:number):void
 }
 
-const logMessage = (input) => {
+function logMessage(input: string): void;
+function logMessage(input: number): void;
+function logMessage(input:string | number): void {
   if (typeof input === "string") {
     console.log(`Message: ${input}`);
   } else {
